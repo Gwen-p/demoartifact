@@ -21,24 +21,27 @@ During the experiment, I encountered the following issues:
     * Solution: Used `jedis.close()` at the end of each experiment.
 
 ## Experiments 
-I use a ``switch`` at the ``main`` to select which experiment is runned.
-### 1. CLI
+I use a ``switch()`` at the ``main`` to select which experiment is runned.
+### 1. CLI 
+###### (Done at terminal)
 * **Case 1: Logged-in users**
     * Used a Redis Set to store connected users (`logged_in_users`).
     * Operations: `SADD`, `SREM`, `SMEMBERS`.
-    * Verified sequence: Alice logs in → Bob logs in → Alice logs out → Eve logs in.
+    * Verified sequence: Alice logs in, Bob logs in, Alice logs out, Eve logs in.
 
 * **Case 2: Poll**
     * Used a Redis Hash to store a poll (`poll:01`) with title and votes for each option.
     * Operations: `HSET`, `HGETALL`, `HINCRBY`.
     * Verified votes increment for "yes" option.
 
-### 2. Java (Jedis)
+### 2. Java (Jedis) 
+###### (Case 1 at main)
 * Repeated all CLI experiments in Java using `UnifiedJedis`.
 * Same data structures: Set for users, Hash for polls.
 * Verified that data inserted/retrieved from Redis matches expected values.
 
-### 3. Cache Implementation
+### 3. Cache Implementation 
+###### (Case 2 at main)
 I was uncertain as to whether it would be preferable to create a class or implement it at the main. The reason I chose to do it at the main is because we're not planning to expand this project any further.
 * Implemented a simple cache for polls:
     * **Logic:**
