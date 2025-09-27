@@ -1,8 +1,7 @@
 # DAT250 Experiment Assignment 5 Report
 
 ## Installation and Setup
-I installed Redis locally on Ubuntu 22.04 following the official instructions.  
-I verified the installation using the CLI command `` redis-cli ping ``
+I installed Redis locally on Ubuntu 22.04 following the official instructions. I verified the installation using the CLI command `` redis-cli ping ``
 which returned `PONG`, confirming the server is running.
 
 ## Technical Problems and Solutions
