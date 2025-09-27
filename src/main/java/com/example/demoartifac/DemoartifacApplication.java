@@ -13,7 +13,9 @@ import redis.clients.jedis.UnifiedJedis;
 public class DemoartifacApplication {
 
 	public static void main(String[] args) {
+        // To select mode
         int mode = 2;
+
         switch (mode) {
             case 0:
         //Experiment 1:
