@@ -92,6 +92,8 @@ public class DemoartifacApplication {
                 System.out.println(jedis2.hgetAll(pollKey));
 
                 jedis2.close();
+
+                break;
         }
 
 
